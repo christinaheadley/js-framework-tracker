@@ -1,22 +1,31 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-// import Chart from "./components/Chart.vue";
-
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home,
-  },
-];
+import Vue from "vue";
+import VueRouter from "vue-router";
+// import Home from "../views/Home.vue";
+import Chart from "./components/Chart.vue";
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes,
-});
+import generateVueComponent from "./component";
+import Highcharts from "highcharts";
 
-export default router;
+// const Chart = generateVueComponent(Highcharts);
+// const routes = [
+//   {
+//     path: "/",
+//     name: "Home",
+//     component: Home,
+//   },
+// ];
+
+// const router = new VueRouter({
+//   mode: "history",
+//   base: process.env.BASE_URL,
+//   routes,
+// });
+
+export default function install(Vue, options = {}) {
+  Vue.component(options.tagName || "highcharts", generateVueComponent(options.highcharts || Highcharts));
+}
+export { Chart };
+
+// export default router;

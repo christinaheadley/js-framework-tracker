@@ -5,7 +5,7 @@ import HighchartsVue from "highcharts-vue";
 // import Highcharts from "highcharts";
 
 Vue.config.productionTip = false;
-Vue.use(HighchartsVue);
+Vue.use(HighchartsVue, { tagName: "charts" });
 
 new Vue({
   el: "#app",
