@@ -7,7 +7,7 @@
     <div>
       <highcharts class="hc" :options="chartOptions" ref="chart"></highcharts>
       <charts :options="chartOptions"></charts>
-      <highcharts :options="chartOptions" :callback="someFunction"></highcharts>
+      <!-- <highcharts :options="chartOptions" :callback="someFunction"></highcharts> -->
     </div>
     <figure class="highcharts-figure">
       <p class="highcharts-description">
@@ -16,10 +16,11 @@
         they are hovered over.
       </p>
     </figure>
-    <!-- <div>
+    <div>
       Angular Stargazers: {{ angulars["stargazers_count"] }} Angular Watchers:
       {{ angulars["subscribers_count"] }} Angular Forks: {{ angulars["forks_count"] }}
     </div>
+    <!-- 
     <div>
       Ember Stargazers: {{ embers["stargazers_count"] }} Ember Watchers: {{ embers["subscribers_count"] }} Ember Forks:
       {{ embers["forks_count"] }}
@@ -84,6 +85,7 @@
 </style>
 
 <script>
+// const username = "christinaheadley";
 import axios from "axios";
 // import Chart from "./components/Chart.vue";
 // import { Chart } from "highcharts-vue";
@@ -181,9 +183,9 @@ export default {
               // 6000,
               // 5000,
               // 500,
-              this.svelteInfo("stargazers_count"),
-              this.svelteInfo("subscribers_count"),
-              this.svelteInfo("forks_count"),
+              this.svelteInfo["stargazers_count"],
+              this.svelteInfo["subscribers_count"],
+              this.svelteInfo["forks_count"],
             ],
           },
           {
@@ -192,9 +194,9 @@ export default {
               // 166000,
               // 155000,
               // 5000,
-              this.vueInfo("stargazers_count"),
-              this.vueInfo("subscribers_count"),
-              this.vueInfo("forks_count"),
+              this.vueInfo["stargazers_count"],
+              this.vueInfo["subscribers_count"],
+              this.vueInfo["forks_count"],
             ],
           },
         ],
